@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 7409443879940900660}
   m_Layer: 0
   m_Name: Pad_Mesh
-  m_TagString: Untagged
+  m_TagString: Respawn
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 2147483647
@@ -107,7 +107,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5707611840256288503}
   m_Layer: 0
-  m_Name: Action_Pad
+  m_Name: Action_Pad_Start
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -146,7 +146,7 @@ GameObject:
   - component: {fileID: 4307799319062029387}
   m_Layer: 0
   m_Name: Pad_Holder_Leg_Mesh_001
-  m_TagString: Untagged
+  m_TagString: Safe
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 2147483647
@@ -243,7 +243,7 @@ GameObject:
   - component: {fileID: 9179982346028275992}
   m_Layer: 0
   m_Name: Pad_Holder_Leg_Mesh_002
-  m_TagString: Untagged
+  m_TagString: Safe
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 2147483647
@@ -340,7 +340,7 @@ GameObject:
   - component: {fileID: 1971052177779841467}
   m_Layer: 0
   m_Name: Pad_Holder_Leg_Mesh_000
-  m_TagString: Untagged
+  m_TagString: Safe
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 2147483647
@@ -437,7 +437,7 @@ GameObject:
   - component: {fileID: 7745431585284783190}
   m_Layer: 0
   m_Name: Pad_Holder_Mesh
-  m_TagString: Untagged
+  m_TagString: Safe
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 2147483647
