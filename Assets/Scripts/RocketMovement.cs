@@ -13,6 +13,7 @@ public class RocketMovement : MonoBehaviour {
     [SerializeField] private InputAction inputThrust;
 
     private Rigidbody _rigidbody = null;
+    private RocketFX _rocketFX = null;
 
     private void OnEnable() {
         inputRotation.Enable();
@@ -22,10 +23,12 @@ public class RocketMovement : MonoBehaviour {
     private void OnDisable() {
         inputRotation.Disable();
         inputThrust.Disable();
+        if (_rocketFX) _rocketFX.PlayEngineThrust(false);
     }
 
     private void Start() {
         _rigidbody = GetComponent<Rigidbody>();
+        _rocketFX = GetComponentInChildren<RocketFX>();
     }
 
     private void Update() {
@@ -35,7 +38,10 @@ public class RocketMovement : MonoBehaviour {
 
     private void ProcessMainThrustInput() {
         if (inputThrust.ReadValue<float>() > 0.5f) {
-            _rigidbody.AddRelativeForce(Vector3.up * mainThrust * Time.deltaTime);
+            if (_rigidbody) _rigidbody.AddRelativeForce(Vector3.up * mainThrust * Time.deltaTime);
+            if (_rocketFX) _rocketFX.PlayEngineThrust(true);
+        } else {
+            if (_rocketFX) _rocketFX.PlayEngineThrust(false);
         }
     }
 
@@ -49,7 +55,7 @@ public class RocketMovement : MonoBehaviour {
     }
 
     private void ActivateRotation(bool clockwise) {
-        _rigidbody.freezeRotation = true; // freeze physics rotation
+        if (_rigidbody) _rigidbody.freezeRotation = true; // freeze physics rotation
 
         if (clockwise) {
             transform.Rotate(-Vector3.forward * rotationalThrust * Time.deltaTime);
@@ -57,6 +63,6 @@ public class RocketMovement : MonoBehaviour {
             transform.Rotate(Vector3.forward * rotationalThrust * Time.deltaTime);
         }
 
-        _rigidbody.freezeRotation = false; // un-freeze physics rotation
+        if (_rigidbody) _rigidbody.freezeRotation = false; // un-freeze physics rotation
     }
 }
