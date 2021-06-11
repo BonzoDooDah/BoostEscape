@@ -7,6 +7,10 @@ public class RocketFX : MonoBehaviour {
     [SerializeField] private ParticleSystem engineFlame;
     [SerializeField] private AudioClip engineSound;
 
+    [Header("Explosion Effects")]
+    [SerializeField] private ParticleSystem explosionFlame;
+    [SerializeField] private AudioClip explosionSound;
+
     private AudioSource _audioSource = null;
 
     private void Start() {
@@ -21,5 +25,10 @@ public class RocketFX : MonoBehaviour {
             if (_audioSource) _audioSource.Stop();
             if (engineFlame) engineFlame.Stop();
         }
+    }
+
+    public void PlayExplosion() {
+        if (explosionSound && _audioSource) _audioSource.PlayOneShot(explosionSound);
+        if (explosionFlame) explosionFlame.Play();
     }
 }
