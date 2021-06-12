@@ -139,6 +139,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Action_Pad_Start
       objectReference: {fileID: 0}
+    - target: {fileID: 4230898340330705133, guid: 629bedfb2529b46418a07747af3f0f3f, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 0f0ff3805e7672245bf16824fa5401d3, type: 2}
     - target: {fileID: 5707611840256288503, guid: 629bedfb2529b46418a07747af3f0f3f, type: 3}
       propertyPath: m_RootOrder
       value: 0
@@ -1771,6 +1775,10 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 1883785595607103613, guid: 3c7530fb9c231cb4ea1815368d4dcf86, type: 3}
+      propertyPath: trackedObject
+      value: 
+      objectReference: {fileID: 46098678}
+    - target: {fileID: 1883785595607103613, guid: 3c7530fb9c231cb4ea1815368d4dcf86, type: 3}
       propertyPath: objectToFollow
       value: 
       objectReference: {fileID: 46098678}
@@ -1835,6 +1843,10 @@ PrefabInstance:
     - target: {fileID: 8583599593553520929, guid: fd415eba3374a254ebe45432634005a8, type: 3}
       propertyPath: m_Name
       value: Directional_Light
+      objectReference: {fileID: 0}
+    - target: {fileID: 8583599593553520929, guid: fd415eba3374a254ebe45432634005a8, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8583599593553520959, guid: fd415eba3374a254ebe45432634005a8, type: 3}
       propertyPath: m_RootOrder

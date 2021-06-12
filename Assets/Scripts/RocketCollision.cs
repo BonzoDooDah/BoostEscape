@@ -3,6 +3,13 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class RocketCollision : MonoBehaviour {
+    [Header("Explosion")]
+    [SerializeField] private float explosionForce = 800f;
+    [SerializeField] private float explosionRadius = 5f;
+    [Range(0.1f, 1.0f)] [SerializeField] private float sloMoSpeed = 0.4f;
+    [SerializeField] private float shakeMagnitude = 2f;
+    [SerializeField] private float shakeDuration = 0.45f;
+
     private Rigidbody _rigidbody = null;
     private RocketMovement _rocketMovement = null;
     private RocketFX _rocketFX = null;
@@ -48,6 +55,8 @@ public class RocketCollision : MonoBehaviour {
         _isTransitioning = true;
         if (_rocketMovement) _rocketMovement.enabled = false;
 
+        FindObjectOfType<CameraController>().ShakeCamera(shakeMagnitude, shakeDuration);
+
         Vector3 velocity = _rigidbody.velocity;
 
         Destroy(_rigidbody); // remove rigidbody so camera stays still
@@ -61,11 +70,11 @@ public class RocketCollision : MonoBehaviour {
             obj.SetActive(true);
             Rigidbody rb = obj.AddComponent<Rigidbody>();
             rb.velocity = velocity;
-            rb.AddExplosionForce(Random.Range(600.0f, 1000.0f), transform.position, 5.0f);
+            rb.AddExplosionForce(Random.Range(0.5f, 1.0f) * explosionForce, transform.position, explosionRadius);
         }
 
         if (_rocketFX) _rocketFX.PlayExplosion();
 
-        Time.timeScale = 0.5f;
+        Time.timeScale = sloMoSpeed;
     }
 }
