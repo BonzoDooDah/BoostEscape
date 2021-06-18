@@ -111,7 +111,7 @@ GameObject:
   - component: {fileID: 1652205055753560260}
   m_Layer: 0
   m_Name: Rocket_Fin_Mesh_000
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -498,7 +498,7 @@ GameObject:
   - component: {fileID: 2872890959326289774}
   m_Layer: 0
   m_Name: Rocket_Fin_Mesh_003
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -594,7 +594,7 @@ GameObject:
   - component: {fileID: 2872890959374835585}
   m_Layer: 0
   m_Name: Rocket_Fin_Mesh_002
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -729,7 +729,7 @@ GameObject:
   - component: {fileID: 2872890960069112019}
   m_Layer: 0
   m_Name: Rocket_Fin_Mesh_001
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -856,7 +856,7 @@ GameObject:
   - component: {fileID: 206545097314760074}
   m_Layer: 0
   m_Name: Player_Rocket
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -992,6 +992,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7cf7bf581c86e27499cbad324ceb7940, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  explosionForce: 800
+  explosionRadius: 5
+  shakeMagnitude: 2
+  shakeDuration: 0.45
 --- !u!1 &2885252188636492505
 GameObject:
   m_ObjectHideFlags: 0
@@ -1249,7 +1253,7 @@ GameObject:
   - component: {fileID: 3315375992872108684}
   m_Layer: 0
   m_Name: Rocket_Body_Mesh
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

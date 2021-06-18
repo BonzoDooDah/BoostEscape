@@ -6,13 +6,13 @@ public class RocketCollision : MonoBehaviour {
     [Header("Explosion")]
     [SerializeField] private float explosionForce = 800f;
     [SerializeField] private float explosionRadius = 5f;
-    [Range(0.1f, 1.0f)] [SerializeField] private float sloMoSpeed = 0.4f;
     [SerializeField] private float shakeMagnitude = 2f;
     [SerializeField] private float shakeDuration = 0.45f;
 
     private Rigidbody _rigidbody = null;
     private RocketMovement _rocketMovement = null;
     private RocketFX _rocketFX = null;
+    private LevelManager _levelManager = null;
     private bool _isTransitioning = false;
 
     private void Start() {
@@ -20,6 +20,7 @@ public class RocketCollision : MonoBehaviour {
         _rocketMovement = GetComponent<RocketMovement>();
         if (_rocketMovement) _rocketMovement.enabled = false;
         _rocketFX = GetComponentInChildren<RocketFX>();
+        _levelManager = FindObjectOfType<LevelManager>();
     }
 
     private void OnCollisionEnter(Collision collision) {
@@ -48,7 +49,7 @@ public class RocketCollision : MonoBehaviour {
         _isTransitioning = true;
         if (_rocketMovement) _rocketMovement.enabled = false;
 
-        Debug.Log("Player SUCCESS!");
+        if (_levelManager) _levelManager.LoadNextLevel();
     }
 
     private void ProcessPlayerDeath() {
@@ -75,6 +76,6 @@ public class RocketCollision : MonoBehaviour {
 
         if (_rocketFX) _rocketFX.PlayExplosion();
 
-        Time.timeScale = sloMoSpeed;
+        if (_levelManager) _levelManager.ReloadLevel();
     }
 }
