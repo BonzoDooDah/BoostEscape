@@ -8,17 +8,17 @@ public class LevelManager : MonoBehaviour {
     [SerializeField] private Animator transitionAnimator;
     [SerializeField] private float transitionDelay = 3f;
 
-    [Header("UI Menus")]
-    [SerializeField] private GameObject introMenu = null;
+    //[Header("UI Menus")]
+    //[SerializeField] private GameObject introMenu = null;
 
     private void Start() {
-        if (SceneManager.GetActiveScene().buildIndex != 0) {
-            Cursor.visible = false;
-            if (introMenu) { introMenu.SetActive(false); }
-        } else {
-            Cursor.visible = true;
-            if (introMenu) { introMenu.SetActive(true); }
-        }
+        //if (SceneManager.GetActiveScene().buildIndex != 0) {
+        Cursor.visible = false;
+        //    if (introMenu) { introMenu.SetActive(false); }
+        //} else {
+            //Cursor.visible = true;
+        //    if (introMenu) { introMenu.SetActive(true); }
+        //}
     }
 
     private IEnumerator LoadLevel(int levelIndex) {
